@@ -16,7 +16,7 @@ or
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
 
 * python code
-#+begin_src python :results output
+#+begin_src python :results output code
 ## Example 1: Using looping technique
 def fib(n):
     a,b = 1,1
@@ -41,15 +41,17 @@ print(list(map(fibR, range(1, 10))))
 #+end_src
 
 #+RESULTS:
-: 5
-: 5
-: [1, 1, 2, 3, 5, 8, 13, 21, 34]
-: [1, 1, 2, 3, 5, 8, 13, 21, 34]
-: [1, 1, 2, 3, 5, 8, 13, 21, 34]
-: [1, 1, 2, 3, 5, 8, 13, 21, 34]
+#+BEGIN_SRC python
+5
+5
+[1, 1, 2, 3, 5, 8, 13, 21, 34]
+[1, 1, 2, 3, 5, 8, 13, 21, 34]
+[1, 1, 2, 3, 5, 8, 13, 21, 34]
+[1, 1, 2, 3, 5, 8, 13, 21, 34]
+#+END_SRC
 
 * R code
-#+begin_src R :results output
+#+begin_src R :results output code
 # by the book
 fib = function(n) {
     if (n == 1L || n == 2L)
@@ -87,8 +89,8 @@ print(sapply(1:10, fibM))
 #+end_src
 
 #+RESULTS:
-:  [1]  1  1  2  3  5  8 13 21 34 55
-:  [1]  1  1  2  3  5  8 13 21 34 55
-:  [1]  1  1  2  3  5  8 13 21 34 55
-
-* TODO how to get formatted output?
+#+BEGIN_SRC R
+ [1]  1  1  2  3  5  8 13 21 34 55
+ [1]  1  1  2  3  5  8 13 21 34 55
+ [1]  1  1  2  3  5  8 13 21 34 55
+#+END_SRC
