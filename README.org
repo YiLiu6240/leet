@@ -5,4 +5,4 @@ using org babel:
 - https://github.com/dfeich/org-babel-examples
 
 leet code solutions
-https://github.com/kamyu104/LeetCode
+- https://github.com/kamyu104/LeetCode
