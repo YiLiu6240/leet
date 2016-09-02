@@ -23,8 +23,6 @@ class Solution:
         return "".join(string)
 
 
-# Time:  O(n)
-# Space: O(n)
 class Solution2:
     def reverse_string(self, s):
         """
@@ -32,6 +30,7 @@ class Solution2:
         :rtype: str
         """
         return s[::-1]
+
 
 if __name__ == '__main__':
     print('Solution 1:\n', Solution().reverse_string("hello"))
