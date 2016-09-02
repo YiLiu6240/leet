@@ -1,0 +1,65 @@
+* remove element
+Given an array and a value, remove all instances of that value *in place* and
+return the new length.
+The order of elements can be changed.
+It doesn't matter what you leave beyond the new length.
+
+#+begin_src c
+class Solution {
+public:
+    int remove_element(int A[], int n, int elem) {
+    /* A[]: the array
+       n: length of the array
+       elem: the element to be removed from A[]
+    */
+        int i = 0, j = 0;
+        for(i = 0; i < n; i++) {
+            if(A[i] == elem) {
+                // continue to the next round of the loop
+                continue;
+            }
+
+            A[j] = A[i];
+            j++;
+            }
+
+        return j;
+    }
+};
+#+end_src
+
+#+begin_src cpp
+class Solution {
+public:
+    /**
+     *@param A: A list of integers
+     *@param elem: An integer
+     *@return: The new length after remove
+     */
+    int removeElement(vector<int> &A, int elem) {
+        // write your code here
+        int start = 0;
+        int n = A.size();
+        for(int i = 0; i < n; i++)
+            if (elem != A[i]) {
+                A[start++] = A[i];
+            }
+        return start;
+    }
+};
+#+end_src
+
+#+begin_src python
+class Solution:
+    # @param    A       a list of integers
+    # @param    elem    an integer, value need to be removed
+    # @return an integer
+    # clrs qsort
+    def removeElement(self, A, elem):
+        j = len(A)-1
+        for i in range(len(A) - 1, -1, -1):
+            if A[i] == elem:
+                A[i], A[j] = A[j], A[i]
+                j -= 1
+        return j+1
+#+end_src

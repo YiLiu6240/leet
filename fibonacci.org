@@ -1,0 +1,88 @@
+* def
+the def:
+\[F_n = F_{n - 1} + F_{n - 2}\]
+
+the Fibonacci sequence:
+\[F_1 = 1, F_2 = 1\]
+1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+
+or
+\[F_0 = 0, F_1 = 1\]
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+
+* python code
+#+begin_src python :results output
+## Example 1: Using looping technique
+def fib(n):
+    a,b = 1,1
+    for i in range(n-1):
+        a,b = b,a+b
+    return a
+
+## Example 2: Using recursion
+def fibR(n):
+    if n==1 or n==2:
+        return 1
+    return fib(n-1)+fib(n-2)
+
+print(fib(5))
+print(fibR(5))
+
+# fib(n) in [0, 10)
+print([fib(x) for x in range(1, 10)])
+print([fibR(x) for x in range(1, 10)])
+print(list(map(fib, range(1, 10))))
+print(list(map(fibR, range(1, 10))))
+#+end_src
+
+#+RESULTS:
+: 5
+: 5
+: [1, 1, 2, 3, 5, 8, 13, 21, 34]
+: [1, 1, 2, 3, 5, 8, 13, 21, 34]
+: [1, 1, 2, 3, 5, 8, 13, 21, 34]
+: [1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+* R code
+#+begin_src R :results output
+# by the book
+fib = function(n) {
+    if (n == 1L || n == 2L)
+        return(1L)
+    else {
+        a = 0L
+        b = 1L
+        for (i in 1L:(n)) {
+            tmp = a + b
+            a = b
+            b = tmp
+        }
+        return(a)
+    }
+}
+
+# recursive version
+fibR = function(n) {
+    if (n == 1L || n == 2L)
+        return(1L)
+    return(fibR(n - 1) + fibR(n - 2))
+}
+
+sapply(1:10, fib)
+sapply(1:10, fibR)
+
+# math, Binet's Fibonacci Number Formula
+fibM = function(n) {
+    phi = (1 + sqrt(5))/2
+    psi = (1 - sqrt(5))/2
+    res = (phi**n - psi**n)/sqrt(5)
+    return(res)
+}
+
+sapply(1:10, fibM)
+#+end_src
+
+#+RESULTS:
+:  [1]  1  1  2  3  5  8 13 21 34 55
+:  [1]  1  1  2  3  5  8 13 21 34 55
+:  [1]  1  1  2  3  5  8 13 21 34 55
