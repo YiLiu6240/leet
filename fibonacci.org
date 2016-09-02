@@ -17,35 +17,36 @@ or
 
 * python code
 #+begin_src python :exports both :results output code
-## Example 1: Using looping technique
+## method 1: Using looping technique
 def fib(n):
     a,b = 1,1
     for i in range(n-1):
         a,b = b,a+b
     return a
 
-## Example 2: Using recursion
+
+## method 2: Using recursion
 def fibR(n):
     if n==1 or n==2:
         return 1
     return fib(n-1)+fib(n-2)
 
-print(fib(5))
-print(fibR(5))
 
-# fib(n) in [0, 10)
+print('serialize using list comprehension')
 print([fib(x) for x in range(1, 10)])
 print([fibR(x) for x in range(1, 10)])
+
+print('serialize using map')
 print(list(map(fib, range(1, 10))))
 print(list(map(fibR, range(1, 10))))
 #+end_src
 
 #+RESULTS:
 #+BEGIN_SRC python
-5
-5
+serialize using list comprehension
 [1, 1, 2, 3, 5, 8, 13, 21, 34]
 [1, 1, 2, 3, 5, 8, 13, 21, 34]
+serialize using map
 [1, 1, 2, 3, 5, 8, 13, 21, 34]
 [1, 1, 2, 3, 5, 8, 13, 21, 34]
 #+END_SRC
@@ -83,14 +84,20 @@ fibM = function(n) {
     return(res)
 }
 
+cat('by the book method\n')
 print(sapply(1:10, fib))
+cat('recursive method\n')
 print(sapply(1:10, fibR))
+cat('Binet\'s formula\n')
 print(sapply(1:10, fibM))
 #+end_src
 
 #+RESULTS:
 #+BEGIN_SRC R
+by the book method
  [1]  1  1  2  3  5  8 13 21 34 55
+recursive method
  [1]  1  1  2  3  5  8 13 21 34 55
+Binet's formula
  [1]  1  1  2  3  5  8 13 21 34 55
 #+END_SRC
