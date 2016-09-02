@@ -6,3 +6,8 @@ using org babel:
 
 leet code solutions
 - https://github.com/kamyu104/LeetCode
+
+** using org babel
+keys:
+- ~C-c C-c~ to eval block
+- ~C-c '~ to edit src block in a dedicated buffer, ~C-c '~ again to exit.
