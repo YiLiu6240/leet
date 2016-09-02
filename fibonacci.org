@@ -16,7 +16,7 @@ or
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
 
 * python code
-#+begin_src python :results output code
+#+begin_src python :exports both :results output code
 ## Example 1: Using looping technique
 def fib(n):
     a,b = 1,1
@@ -51,7 +51,7 @@ print(list(map(fibR, range(1, 10))))
 #+END_SRC
 
 * R code
-#+begin_src R :results output code
+#+begin_src R :exports both :results output code
 # by the book
 fib = function(n) {
     if (n == 1L || n == 2L)
