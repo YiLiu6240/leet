@@ -1,13 +1,18 @@
 * def
-the def:
+def:
+
 \[F_n = F_{n - 1} + F_{n - 2}\]
 
 the Fibonacci sequence:
+
 \[F_1 = 1, F_2 = 1\]
+
 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
 
 or
+
 \[F_0 = 0, F_1 = 1\]
+
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
 
 * python code
@@ -68,9 +73,6 @@ fibR = function(n) {
     return(fibR(n - 1) + fibR(n - 2))
 }
 
-sapply(1:10, fib)
-sapply(1:10, fibR)
-
 # math, Binet's Fibonacci Number Formula
 fibM = function(n) {
     phi = (1 + sqrt(5))/2
@@ -79,10 +81,14 @@ fibM = function(n) {
     return(res)
 }
 
-sapply(1:10, fibM)
+print(sapply(1:10, fib))
+print(sapply(1:10, fibR))
+print(sapply(1:10, fibM))
 #+end_src
 
 #+RESULTS:
 :  [1]  1  1  2  3  5  8 13 21 34 55
 :  [1]  1  1  2  3  5  8 13 21 34 55
 :  [1]  1  1  2  3  5  8 13 21 34 55
+
+* TODO how to get formatted output?

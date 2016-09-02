@@ -1,1 +1,4 @@
 * leet code exercises
+
+refer here for using org babel:
+https://github.com/dfeich/org-babel-examples
